@@ -34,20 +34,20 @@ const shorten = () => {
             .catch((error) => console.error(error));
     }
     return (
-        <div className='mx-auto max-w-lg bg-gray-100 my-16 p-8 rounded-lg flex flex-col gap-4' >
-            <h1 className='font-bold text-xl' >Generate your short URLs</h1>
+        <div className='mx-auto max-w-lg w-full bg-gray-100 my-10 p-6 md:p-8 rounded-lg flex flex-col gap-4' >
+            <h1 className='font-bold text-xl text-center md:text-left' >Generate your short URLs</h1>
             <div className='flex flex-col gap-3' >
                 <input type="text"
                     value={url}
-                    className='px-4 py-2 bg-white focus:outline-gray-500 rounded-md'
+                    className='w-full px-4 py-2 bg-white focus:outline-gray-500 rounded-md'
                     placeholder='Enter the URL'
                     onChange={e => { seturl(e.target.value) }} />
                 <input type="text"
                     value={shorturl}
-                    className='px-4 py-2 bg-white focus:outline-gray-500 rounded-md'
+                    className='w-full px-4 py-2 bg-white focus:outline-gray-500 rounded-md'
                     placeholder='Enter your preferred short URL text'
                     onChange={e => { setshorturl(e.target.value) }} />
-                <button onClick={generate} className='bg-gray-700 shadow-lg rounded-lg p-2 py-1 font-bold text-white my-4'>Generate</button>
+                <button onClick={generate} className='bg-gray-700 shadow-lg rounded-lg p-2 py-1 font-bold text-white my-4 w-full md:w-auto'>Generate</button>
             </div>
             {generated && <> <span className='font-bold text-lg'>Your Link </span><code><Link target="_blank" href={generated}>{generated}</Link> 
                 </code></>}
